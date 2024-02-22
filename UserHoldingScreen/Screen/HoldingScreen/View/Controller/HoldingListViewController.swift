@@ -32,11 +32,10 @@ extension HoldingListViewController {
         viewModelInit()
         navigationController?.navigationBar.prefersLargeTitles = false
         
-        // Create a label
         let titleLabel = UILabel()
         titleLabel.text = "Upstox Holding"
         titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        titleLabel.textColor = .white // Set your desired font
+        titleLabel.textColor = .white
         titleLabel.sizeToFit()
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleLabel)
     }

@@ -26,7 +26,7 @@ class HoldingsCellTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       
         HoldingListBackground.clipsToBounds = false
         HoldingListBackground.layer.cornerRadius = 5
     }

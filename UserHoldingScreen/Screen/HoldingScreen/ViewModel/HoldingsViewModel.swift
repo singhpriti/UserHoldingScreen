@@ -21,7 +21,7 @@ final class HoldingsViewModel {
             case .success(let userHoldingsResponse):
                 self.holdings = userHoldingsResponse.userHolding
                 
-                // Notify any observers (e.g., views) that the data has been updated
+              
                 self.eventHandler?(.dataLoaded)
             case .failure(let error):
                 self.eventHandler?(.error(error))
