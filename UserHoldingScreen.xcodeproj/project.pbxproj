@@ -76,7 +76,6 @@
 			children = (
 				2DF9AA162B87110C0002E21D /* Application */,
 				2DF9AA172B8711220002E21D /* Constant */,
-				2DF9AA132B87104A0002E21D /* Extension */,
 				2DF9AA122B8710470002E21D /* APIService */,
 				2DF9AA152B8711010002E21D /* Screen */,
 				2DF9AA182B8711330002E21D /* Storyboard */,
@@ -93,13 +92,6 @@
 				2DF9AA202B8715550002E21D /* APIManager.swift */,
 			);
 			path = APIService;
-			sourceTree = "<group>";
-		};
-		2DF9AA132B87104A0002E21D /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		2DF9AA142B87104D0002E21D /* Resources */ = {
