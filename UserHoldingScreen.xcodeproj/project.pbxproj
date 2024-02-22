@@ -20,7 +20,6 @@
 		2DF9AA272B87244C0002E21D /* HoldingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF9AA262B87244C0002E21D /* HoldingsViewModel.swift */; };
 		2DF9AA2B2B87479C0002E21D /* HoldingsCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF9AA292B87479C0002E21D /* HoldingsCellTableViewCell.swift */; };
 		2DF9AA2C2B87479C0002E21D /* HoldingsCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DF9AA2A2B87479C0002E21D /* HoldingsCellTableViewCell.xib */; };
-		2DF9AA2E2B8793EA0002E21D /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF9AA2D2B8793EA0002E21D /* PortfolioView.swift */; };
 		2DF9AA312B87A8150002E21D /* PortfolioViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF9AA2F2B87A8150002E21D /* PortfolioViewTableViewCell.swift */; };
 		2DF9AA322B87A8150002E21D /* PortfolioViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DF9AA302B87A8150002E21D /* PortfolioViewTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -41,7 +40,6 @@
 		2DF9AA262B87244C0002E21D /* HoldingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldingsViewModel.swift; sourceTree = "<group>"; };
 		2DF9AA292B87479C0002E21D /* HoldingsCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldingsCellTableViewCell.swift; sourceTree = "<group>"; };
 		2DF9AA2A2B87479C0002E21D /* HoldingsCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HoldingsCellTableViewCell.xib; sourceTree = "<group>"; };
-		2DF9AA2D2B8793EA0002E21D /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		2DF9AA2F2B87A8150002E21D /* PortfolioViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewTableViewCell.swift; sourceTree = "<group>"; };
 		2DF9AA302B87A8150002E21D /* PortfolioViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortfolioViewTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,7 +168,6 @@
 				2DF9AA282B8747620002E21D /* Controller */,
 				2DF9AA292B87479C0002E21D /* HoldingsCellTableViewCell.swift */,
 				2DF9AA2A2B87479C0002E21D /* HoldingsCellTableViewCell.xib */,
-				2DF9AA2D2B8793EA0002E21D /* PortfolioView.swift */,
 				2DF9AA2F2B87A8150002E21D /* PortfolioViewTableViewCell.swift */,
 				2DF9AA302B87A8150002E21D /* PortfolioViewTableViewCell.xib */,
 			);
@@ -267,7 +264,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DF9A9FA2B870B7E0002E21D /* AppDelegate.swift in Sources */,
-				2DF9AA2E2B8793EA0002E21D /* PortfolioView.swift in Sources */,
 				2DF9AA252B8722DB0002E21D /* HoldingListViewController.swift in Sources */,
 				2DF9AA042B870B7E0002E21D /* UserHoldingScreen.xcdatamodeld in Sources */,
 				2DF9AA2B2B87479C0002E21D /* HoldingsCellTableViewCell.swift in Sources */,
