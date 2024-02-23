@@ -47,12 +47,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="TTA-ds-DJ6" firstAttribute="top" secondItem="nLN-DQ-dnk" secondAttribute="bottom" constant="8" id="8xh-jA-03X"/>
                             <constraint firstItem="nLN-DQ-dnk" firstAttribute="leading" secondItem="RRM-go-3ml" secondAttribute="leading" constant="8" id="Afj-Ur-Kjj"/>
                             <constraint firstAttribute="height" constant="64" id="ElS-qf-qvC"/>
                             <constraint firstItem="TTA-ds-DJ6" firstAttribute="leading" secondItem="RRM-go-3ml" secondAttribute="leading" constant="8" id="HyB-u1-ePC"/>
                             <constraint firstItem="TTA-ds-DJ6" firstAttribute="top" secondItem="nLN-DQ-dnk" secondAttribute="bottom" constant="8" id="NHt-gx-vfe"/>
-                            <constraint firstItem="xoW-bU-oPS" firstAttribute="top" secondItem="xU9-qq-t5C" secondAttribute="bottom" constant="8" id="Q5L-01-GHH"/>
                             <constraint firstItem="xU9-qq-t5C" firstAttribute="top" secondItem="RRM-go-3ml" secondAttribute="top" constant="8" id="UwJ-dU-C0Q"/>
                             <constraint firstAttribute="trailing" secondItem="xU9-qq-t5C" secondAttribute="trailing" constant="8" id="Xng-6p-56z"/>
                             <constraint firstItem="nLN-DQ-dnk" firstAttribute="top" secondItem="RRM-go-3ml" secondAttribute="top" constant="8" id="aep-ae-E7A"/>
@@ -70,13 +68,13 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="HoldingListBackground" destination="RRM-go-3ml" id="HdK-4G-wxr"/>
-                <outlet property="LTP" destination="xU9-qq-t5C" id="va3-4A-C33"/>
-                <outlet property="ProfitandLoss" destination="xoW-bU-oPS" id="w31-X6-VYt"/>
-                <outlet property="Quantity" destination="TTA-ds-DJ6" id="EwH-rn-MFm"/>
-                <outlet property="Symbol" destination="nLN-DQ-dnk" id="YZs-Fn-M1q"/>
+                <outlet property="holdingListBackground" destination="RRM-go-3ml" id="HdK-4G-wxr"/>
+                <outlet property="ltp" destination="xU9-qq-t5C" id="va3-4A-C33"/>
+                <outlet property="profitAndLoss" destination="xoW-bU-oPS" id="w31-X6-VYt"/>
+                <outlet property="quantity" destination="TTA-ds-DJ6" id="EwH-rn-MFm"/>
+                <outlet property="symbol" destination="nLN-DQ-dnk" id="YZs-Fn-M1q"/>
             </connections>
-            <point key="canvasLocation" x="-111" y="-47"/>
+            <point key="canvasLocation" x="111" y="-46"/>
         </tableViewCell>
     </objects>
     <resources>

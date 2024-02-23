@@ -7,17 +7,14 @@
 
 import UIKit
 
-class PortfolioView: UIView {
+ final class PortfolioView: UIView {
 
-    @IBOutlet weak var OverAllPandL: UILabel!
-    @IBOutlet weak var TodayPandL: UILabel!
-    @IBOutlet weak var CurrentValue: UILabel!
-    @IBOutlet weak var TotalInvestment: UILabel!
+    @IBOutlet weak var overAllPandL: UILabel!
+    @IBOutlet weak var todayPandL: UILabel!
+    @IBOutlet weak var currentValue: UILabel!
+    @IBOutlet weak var totalInvestment: UILabel!
     @IBOutlet weak var dataStackHeight: NSLayoutConstraint!
     @IBOutlet weak var upDownButton: UIButton!
     var isExpand: Bool = false
     
-    override class func awakeFromNib() {
-        
-    }
 }

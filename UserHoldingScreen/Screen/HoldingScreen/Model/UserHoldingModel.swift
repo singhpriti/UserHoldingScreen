@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 struct UserHoldingsResponse: Codable {
     let userHolding: [UserHolding]
 }
@@ -19,7 +17,6 @@ struct UserHolding: Codable {
     let ltp: Double
     let avgPrice: Double
     let close: Double
-    
     
     var currentValue: Double {
         return ltp * Double(quantity)
@@ -36,7 +33,6 @@ struct UserHolding: Codable {
     var todayPnl: Double {
         return (close - ltp) * Double(quantity)
     }
-
 }
     
 

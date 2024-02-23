@@ -42,7 +42,7 @@
                     </view>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="xzU-dF-Q7e"/>
                     <connections>
-                        <outlet property="HoldingTableView" destination="9fQ-Wp-oIb" id="Vge-DS-ZdC"/>
+                        <outlet property="holdingTableView" destination="9fQ-Wp-oIb" id="Vge-DS-ZdC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

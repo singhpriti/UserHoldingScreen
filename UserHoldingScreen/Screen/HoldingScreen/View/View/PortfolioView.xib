@@ -21,15 +21,15 @@
                             <rect key="frame" x="0.0" y="0.0" width="413" height="198"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9T-Mk-RCA">
-                                    <rect key="frame" x="0.0" y="2" width="413" height="10"/>
+                                    <rect key="frame" x="0.0" y="2" width="413" height="44"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="10" id="Wvh-CS-kos"/>
+                                        <constraint firstAttribute="height" constant="44" id="Wvh-CS-kos"/>
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="arrowshape.up.circle.fill" catalog="system"/>
                                 </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="riI-pU-Dnk">
-                                    <rect key="frame" x="8" y="28" width="397" height="93"/>
+                                    <rect key="frame" x="8" y="62" width="397" height="93"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="tWc-im-45Y">
                                             <rect key="frame" x="0.0" y="0.0" width="397" height="20.333333333333332"/>
@@ -66,7 +66,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ffT-3q-eb8">
-                                            <rect key="frame" x="0.0" y="72.666666666666671" width="397" height="20.333333333333329"/>
+                                            <rect key="frame" x="0.0" y="72.666666666666657" width="397" height="20.333333333333329"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Profit &amp; Loss" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snh-vC-MC0">
                                                     <rect key="frame" x="0.0" y="0.0" width="167" height="20.333333333333332"/>
@@ -91,7 +91,7 @@
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="7I3-k6-m7c">
-                                    <rect key="frame" x="8" y="153" width="397" height="40"/>
+                                    <rect key="frame" x="8" y="187" width="397" height="40"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profit &amp; Loss" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Dv-rJ-sFw">
                                             <rect key="frame" x="0.0" y="0.0" width="101" height="40"/>
@@ -145,14 +145,14 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="CurrentValue" destination="sr7-Nb-oRA" id="ByD-ll-BWb"/>
-                <outlet property="OverAllPandL" destination="KO2-Ah-73M" id="SuQ-5P-Zgc"/>
-                <outlet property="TodayPandL" destination="5Ih-3f-W2H" id="kCW-gJ-JvO"/>
-                <outlet property="TotalInvestment" destination="KzB-4h-XSk" id="4EU-2j-JX8"/>
+                <outlet property="currentValue" destination="sr7-Nb-oRA" id="ByD-ll-BWb"/>
                 <outlet property="dataStackHeight" destination="uR2-dj-9ZT" id="CtM-L0-nkE"/>
+                <outlet property="overAllPandL" destination="KO2-Ah-73M" id="SuQ-5P-Zgc"/>
+                <outlet property="todayPandL" destination="5Ih-3f-W2H" id="kCW-gJ-JvO"/>
+                <outlet property="totalInvestment" destination="KzB-4h-XSk" id="4EU-2j-JX8"/>
                 <outlet property="upDownButton" destination="f9T-Mk-RCA" id="brU-Ik-MpB"/>
             </connections>
-            <point key="canvasLocation" x="106.10687022900763" y="-203.52112676056339"/>
+            <point key="canvasLocation" x="48" y="-199"/>
         </view>
     </objects>
     <resources>

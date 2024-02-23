@@ -7,18 +7,15 @@
 
 import UIKit
 
-class HoldingsCellTableViewCell: UITableViewCell {
+final class HoldingsCellTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var holdingListBackground: UIView!
+    @IBOutlet weak var symbol: UILabel!
+    @IBOutlet weak var quantity: UILabel!
+    @IBOutlet weak var ltp: UILabel!
+    @IBOutlet weak var profitAndLoss: UILabel!
     
-    @IBOutlet weak var HoldingListBackground: UIView!
-    @IBOutlet weak var Symbol: UILabel!
-    @IBOutlet weak var Quantity: UILabel!
-    @IBOutlet weak var LTP: UILabel!
-    @IBOutlet weak var ProfitandLoss: UILabel!
-   // @IBOutlet weak var PortfolioVie: UIView!
-    
-    
-    var data : UserHolding? {
+    var data: UserHolding? {
         didSet{
             holdingDetailConfig()
         }
@@ -26,60 +23,48 @@ class HoldingsCellTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-       
-        HoldingListBackground.clipsToBounds = false
-        HoldingListBackground.layer.cornerRadius = 5
+        
+        holdingListBackground.clipsToBounds = false
+        holdingListBackground.layer.cornerRadius = 5
     }
-    
-    @objc func toggleCollapse() {
-           if let tableView = superview as? UITableView {
-               tableView.beginUpdates()
-               tableView.endUpdates()
-           }
-       }
-
+        
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
-    
-    
-    func holdingDetailConfig() {
-        guard let data = data else { return }
+ 
+    private func holdingDetailConfig() {
         
-        Symbol.text = data.symbol
-        Quantity.text = "\(data.quantity)"
-    
+        guard let data = data else { return }
+        symbol.text = data.symbol
+        quantity.text = "\(data.quantity)"
+        
         let ltpAttributedString = NSMutableAttributedString(string: "LTP: ", attributes: [
             .foregroundColor: UIColor.black,
-            .font: UIFont.systemFont(ofSize: LTP.font.pointSize)
+            .font: UIFont.systemFont(ofSize: ltp.font.pointSize)
         ])
-    
-        let ltpPriceAttributedString = NSAttributedString(string: "\u{20B9} \(data.ltp)", attributes: [
+        let priceSymbol = "\u{20B9}"
+        let ltpPriceAttributedString = NSAttributedString(string: "\(priceSymbol) \(data.ltp)", attributes: [
             .foregroundColor: UIColor.black,
             .font: UIFont.boldSystemFont(ofSize: 18)
-            //.font: UIFont.boldSystemFont(ofSize: LTP.font.pointSize)
         ])
         ltpAttributedString.append(ltpPriceAttributedString)
         
-    
-        LTP.attributedText = ltpAttributedString
+        ltp.attributedText = ltpAttributedString
         
-       
         let pnlValue = String(format: "%.2f", data.pnl)
         let pnlAttributedString = NSMutableAttributedString(string: "P/L: ", attributes: [
             .foregroundColor: UIColor.black,
-            .font: UIFont.systemFont(ofSize: ProfitandLoss.font.pointSize)
+            .font: UIFont.systemFont(ofSize: profitAndLoss.font.pointSize)
         ])
         
-        let pnlPriceAttributedString = NSAttributedString(string: "\u{20B9} \(pnlValue)", attributes: [
+        let pnlPriceAttributedString = NSAttributedString(string: "\(priceSymbol) \(pnlValue)", attributes: [
             .foregroundColor: UIColor.black,
-            .font: UIFont.boldSystemFont(ofSize: ProfitandLoss.font.pointSize)
+            .font: UIFont.boldSystemFont(ofSize: profitAndLoss.font.pointSize)
         ])
         pnlAttributedString.append(pnlPriceAttributedString)
-       
-        ProfitandLoss.attributedText = pnlAttributedString
+        
+        profitAndLoss.attributedText = pnlAttributedString
     }
-
+    
     
 }

@@ -7,16 +7,17 @@
 
 import UIKit
 
-class HoldingListViewController: UIViewController {
+final class HoldingListViewController: UIViewController {
     
-    @IBOutlet weak var HoldingTableView : UITableView!
-    var portfolio: PortfolioView!
+   @IBOutlet weak var holdingTableView: UITableView!
     
-    var model = HoldingsViewModel()
-    
-    var isExpanded = false
-    var collapsedHeight: CGFloat = 0
-    var expandedHeight: CGFloat = 93
+   private var portfolio: PortfolioView?
+   private var model = HoldingsViewModel()
+   private var isExpanded = false
+   private var collapsedHeight: CGFloat = 0
+   private var expandedHeight: CGFloat = 93
+   private var portfolioCollapsedHeight: CGFloat = 159
+   private var portfolioExpendedHeight: CGFloat = 252
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +27,11 @@ class HoldingListViewController: UIViewController {
 
 extension HoldingListViewController {
     
-    func config(){
+     private func config() {
         portfolio = .fromNib()
         
-        portfolio.upDownButton.addTarget(self, action: #selector(expandCollapseButtonTapped), for: .touchUpInside)
-        HoldingTableView.register(UINib(nibName: "HoldingsCellTableViewCell" , bundle: nil), forCellReuseIdentifier: "holdingCell")
+        portfolio?.upDownButton.addTarget(self, action: #selector(expandCollapseButtonTapped), for: .touchUpInside)
+        holdingTableView.register(UINib(nibName: "HoldingsCellTableViewCell" , bundle: nil), forCellReuseIdentifier: "holdingCell")
         
         viewModelInit()
         navigationController?.navigationBar.prefersLargeTitles = false
@@ -43,28 +44,29 @@ extension HoldingListViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleLabel)
     }
     
-    private func preparePortfolioWithData(){
+    private func preparePortfolioWithData() {
+        guard let portfolio else { return }
         view.addSubview(portfolio)
         portfolio.upDownButton.setImage(UIImage(systemName: "arrowshape.up.circle.fill"), for: .normal)
-        portfolio?.frame = CGRect(x: 0 , y: UIScreen.main.bounds.height - 125, width: UIScreen.main.bounds.width, height: 125)
-        portfolio?.dataStackHeight.constant = collapsedHeight
+        portfolio.frame = CGRect(x: 0 , y: UIScreen.main.bounds.height - portfolioCollapsedHeight, width: UIScreen.main.bounds.width, height: portfolioCollapsedHeight)
+        portfolio.dataStackHeight.constant = collapsedHeight
         calculateAndPreparePortFolio()
     }
     
-    @objc func expandCollapseButtonTapped(){
+    @objc func expandCollapseButtonTapped() {
         isExpanded.toggle()
         if isExpanded {
-            portfolio.upDownButton.setImage(UIImage(systemName: "arrowshape.down.circle.fill"), for: .normal)
-            portfolio?.frame = CGRect(x: 0 , y: UIScreen.main.bounds.height - 218, width: UIScreen.main.bounds.width, height: 218)
+            portfolio?.upDownButton.setImage(UIImage(systemName: "arrowshape.down.circle.fill"), for: .normal)
+            portfolio?.frame = CGRect(x: 0 , y: UIScreen.main.bounds.height - portfolioExpendedHeight, width: UIScreen.main.bounds.width, height: portfolioExpendedHeight)
             portfolio?.dataStackHeight.constant = expandedHeight
         }else{
-            portfolio.upDownButton.setImage(UIImage(systemName: "arrowshape.up.circle.fill"), for: .normal)
-            portfolio?.frame = CGRect(x: 0 , y: UIScreen.main.bounds.height - 125, width: UIScreen.main.bounds.width, height: 125)
+            portfolio?.upDownButton.setImage(UIImage(systemName: "arrowshape.up.circle.fill"), for: .normal)
+            portfolio?.frame = CGRect(x: 0 , y: UIScreen.main.bounds.height - portfolioCollapsedHeight, width: UIScreen.main.bounds.width, height: portfolioCollapsedHeight)
             portfolio?.dataStackHeight.constant = collapsedHeight
         }
     }
     
-    private func calculateAndPreparePortFolio(){
+    private func calculateAndPreparePortFolio() {
         let totalCurrentValue = model.holdings.reduce(0.0) { $0 + $1.currentValue }
         let totalInvestmentValue = model.holdings.reduce(0.0) { $0 + $1.investmentValue }
         let totalPnl = totalCurrentValue - totalInvestmentValue
@@ -75,27 +77,28 @@ extension HoldingListViewController {
         let formattedPnl = String(format: "%.2f", totalPnl)
         let formattedTodayPnl = String(format: "%.2f", totalTodayPnl)
         
-        portfolio.CurrentValue.text = "\u{20B9} \(formattedCurrentValue)"
-        portfolio.TotalInvestment.text = "\u{20B9} \(formattedInvestmentValue)"
-        portfolio.TodayPandL.text = "\u{20B9} \(formattedTodayPnl)"
-        portfolio.OverAllPandL.text = "\u{20B9} \(formattedPnl)"
+        let priceSymbol = "\u{20B9}"
+        portfolio?.currentValue.text = "\(priceSymbol) \(formattedCurrentValue)"
+        portfolio?.totalInvestment.text = "\(priceSymbol) \(formattedInvestmentValue)"
+        portfolio?.todayPandL.text = "\(priceSymbol) \(formattedTodayPnl)"
+        portfolio?.overAllPandL.text = "\(priceSymbol) \(formattedPnl)"
     }
     
     
-    func viewModelInit(){
+    private func viewModelInit() {
         model.fetchUserHoldings()
         observeDataBinding()
     }
     
-    func observeDataBinding(){
+   private func observeDataBinding() {
         model.eventHandler = { [weak self] result in
             guard let self else {return}
             switch result {
-            case.stopLoading:
+            case .stopLoading:
                 print("Here is your holdings...")
-            case.dataLoaded:
+            case .dataLoaded:
                 DispatchQueue.main.async {
-                    self.HoldingTableView.reloadData()
+                    self.holdingTableView.reloadData()
                     self.preparePortfolioWithData()
                 }
             case .error(let error):
@@ -109,7 +112,7 @@ extension HoldingListViewController {
 
 extension HoldingListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == HoldingTableView {
+        if tableView == holdingTableView {
             return model.holdings.count
         }
         return 0
