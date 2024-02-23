@@ -113,10 +113,10 @@ extension HoldingListViewController: UITableViewDataSource, UITableViewDelegate 
             cell.TodayPandL.text = "Today's Profit & Loss"
             cell.OverAllPandL.text = "Profit & Loss"
             
-            cell.CurrentAmount.text = "\u{20B9}\(formattedCurrentValue)"
-            cell.TotalInvestmentAmount.text = "\u{20B9}\(formattedInvestmentValue)"
-            cell.TodaysPandLAmount.text = "\u{20B9}\(formattedTodayPnl)"
-            cell.OverallAmount.text = "\u{20B9}\(formattedPnl)"
+            cell.CurrentAmount.text = "\u{20B9} \(formattedCurrentValue)"
+            cell.TotalInvestmentAmount.text = "\u{20B9} \(formattedInvestmentValue)"
+            cell.TodaysPandLAmount.text = "\u{20B9} \(formattedTodayPnl)"
+            cell.OverallAmount.text = "\u{20B9} \(formattedPnl)"
             
 
             return cell
