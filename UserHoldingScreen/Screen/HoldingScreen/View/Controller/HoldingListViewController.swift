@@ -53,7 +53,6 @@ extension HoldingListViewController {
     
     @objc func expandCollapseButtonTapped(){
         isExpanded.toggle()
-        // Note: 218 is total height and 125 is remaining height while hiding other portion
         if isExpanded {
             portfolio.upDownButton.setImage(UIImage(systemName: "arrowshape.down.circle.fill"), for: .normal)
             portfolio?.frame = CGRect(x: 0 , y: UIScreen.main.bounds.height - 218, width: UIScreen.main.bounds.width, height: 218)
