@@ -17,13 +17,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a0b-l0-MWU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0b-l0-MWU">
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="0.0"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUX-Ua-Ng6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUX-Ua-Ng6">
                                 <rect key="frame" x="8" y="17" width="144" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="0oH-VK-vzd"/>
+                                    <constraint firstAttribute="width" constant="144" id="CL7-wP-g1l"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -42,9 +44,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6R-IT-946">
-                                <rect key="frame" x="250" y="17" width="95" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6R-IT-946">
+                                <rect key="frame" x="250" y="17" width="144" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="6yk-9l-1kY"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="144" id="BW1-Mi-D89"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -79,8 +84,24 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="b6R-IT-946" firstAttribute="leading" secondItem="a0b-l0-MWU" secondAttribute="leading" constant="250" id="0Aa-dJ-WKH"/>
+                            <constraint firstItem="b6R-IT-946" firstAttribute="top" secondItem="a0b-l0-MWU" secondAttribute="top" constant="17" id="5r8-m5-4X9"/>
+                            <constraint firstItem="uUX-Ua-Ng6" firstAttribute="leading" secondItem="a0b-l0-MWU" secondAttribute="leading" constant="8" id="GqM-gF-A4C"/>
+                            <constraint firstItem="uUX-Ua-Ng6" firstAttribute="top" secondItem="a0b-l0-MWU" secondAttribute="top" constant="17" id="M8A-tC-wos"/>
+                            <constraint firstItem="uUX-Ua-Ng6" firstAttribute="top" secondItem="a0b-l0-MWU" secondAttribute="top" constant="17" id="URV-Vw-tKn"/>
+                            <constraint firstAttribute="trailing" secondItem="b6R-IT-946" secondAttribute="trailing" constant="8" id="aFW-sE-oHg"/>
+                            <constraint firstAttribute="trailing" secondItem="b6R-IT-946" secondAttribute="trailing" constant="8" id="eDc-k7-POP"/>
+                            <constraint firstItem="b6R-IT-946" firstAttribute="leading" secondItem="uUX-Ua-Ng6" secondAttribute="trailing" constant="98" id="yLB-l5-vaI"/>
+                        </constraints>
                     </view>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="a0b-l0-MWU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="30c-7b-Mnn"/>
+                    <constraint firstAttribute="trailing" secondItem="a0b-l0-MWU" secondAttribute="trailing" id="k1J-Iv-SbS"/>
+                    <constraint firstAttribute="bottom" secondItem="a0b-l0-MWU" secondAttribute="bottom" constant="250" id="mno-UV-w3a"/>
+                    <constraint firstItem="a0b-l0-MWU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="poB-YI-KIL"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
@@ -93,7 +114,7 @@
                 <outlet property="TotalInvestment" destination="8Hy-iw-Ql8" id="rZB-bR-USF"/>
                 <outlet property="TotalInvestmentAmount" destination="Rvf-eX-tUa" id="aWs-p3-CFZ"/>
             </connections>
-            <point key="canvasLocation" x="-43" y="25"/>
+            <point key="canvasLocation" x="-147" y="11"/>
         </tableViewCell>
     </objects>
     <resources>
